@@ -1,0 +1,27 @@
+<zk 
+	xmlns:x="http://www.w3.org/1999/xhtml" 
+	xmlns:n="http://www.zkoss.org/2005/zk/native" 
+	xmlns:c="http://www.zkoss.org/2005/zk/client" 
+	xmlns:ca="http://www.zkoss.org/2005/zk/client/attribute" 
+	xmlns:a="http://www.zkoss.org/2005/zk/annotation"
+>
+
+
+<div viewModel="@id('vm') @init('br.com.rodartenogueira.zkspringmodelo.viewmodel.VmIndex')">
+
+	Qual seu nome: <textbox id="demoInput"/>
+	<button id="demoButton" label="Submit" onClick='demoLabel.setValue("Hello " + demoInput.getValue() + "!")'/>
+	<separator/>
+	<label id="demoLabel"/>
+	
+	
+	<combobox model="@load(vm.lsPlanos)">
+		<template name="model">
+			<comboitem value="@load(each.nome)" label="@load(each.nome)"/>
+		</template>
+	</combobox>
+	
+	
+	
+</div>	
+</zk>
